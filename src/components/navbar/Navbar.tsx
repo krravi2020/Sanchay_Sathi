@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Logo from "../../assets/Logo.png";
 
 import {
   AppBar,
@@ -49,20 +50,20 @@ export default function Navbar() {
 
   const navItems = [
     {
-      label: "A",
-      path: "/a",
+      label: "Home",
+      path: "/Home",
     },
     {
-      label: "B",
-      path: "/b",
+      label: "Features",
+      path: "/Features",
     },
     {
-      label: "C",
-      path: "/c",
+      label: "Learn",
+      path: "/Learn",
     },
     {
-      label: "D",
-      path: "/d",
+      label: "About",
+      path: "/About",
     },
   ];
 
@@ -95,25 +96,32 @@ export default function Navbar() {
           {/* Logo */}
 
           <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              cursor: "pointer",
-              flexGrow: 1,
-            }}
-            onClick={() =>
-              navigate("/")
-            }
-          >
-            {/* Replace with actual logo image later */}
+  onClick={() => navigate("/")}
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    cursor: "pointer",
+    gap: 1.5,
+  }}
+>
+  <Box
+    component="img"
+    src={Logo}
+    alt="Sanchay Sathi"
+    sx={{
+      height: {
+        xs: 42,
+        sm: 50,
+        md: 60,
+      },
+      width: "auto",
+      objectFit: "contain",
+    }}
+  />
 
-            <Typography
-              variant="h5"
-              fontWeight="bold"
-            >
-              AA Wealth
-            </Typography>
-          </Box>
+    </Box>
+
+          <Box sx={{ flexGrow: 1 }} />
 
           {/* Desktop Navigation */}
 
